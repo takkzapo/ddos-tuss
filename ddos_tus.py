@@ -15,7 +15,7 @@ bots = len(proxys)
 
 def ascii_vro():
     clear()
-    print(Fore.BLUE + """
+    print(Fore.MAGENTA + """
      db   db  .d8b.  d8b   db d8888b.  .d88b.  .d8888.
     88   88 d8' `8b 888o  88 88  `8D .8P  Y8. 88'  YP
     88ooo88 88ooo88 88V8o 88 88   88 88    88 `8bo.
@@ -38,7 +38,7 @@ def menu():
     clear()
     print('HANDOS By LeMinhTu [LeMinhTu.info] ')
     print("https://LeMinhTu.info")
-    print(Fore.LIGHTCYAN_EX + """
+    print(Fore.MAGENTA + """
             ╚═════════════════════╦═════════════════════════════════════════╦══════════════════════╝
                 ╔═════════════════╩══════════════[HANDOS-DDoS]══════════════╩══════════════════╗
                ╔╝------------------------------------------------------------------------------╚╗
@@ -140,10 +140,10 @@ def main():
             try:
                 url = cnc.split()[1]
                 method = cnc.split()[2]
-                os.system(f'go run sever.go -site {url} -data {method}')
+                os.system(f'go run attack.go -site {url} -data {method}')
             except IndexError:
-                print(Fore.RED +'Usage: sever <url> METHODS<GET/POST>')
-                print(Fore.RED +'Example: sever http://LeMinhTu.info/ GET')
+                print(Fore.RED +'Usage: attack <url> METHODS<GET/POST>')
+                print(Fore.RED +'Example: attack http://LeMinhTu.info/ GET')
 
         elif "info" in cnc:
             print(f'''
