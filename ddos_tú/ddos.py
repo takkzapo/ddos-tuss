@@ -39,7 +39,7 @@ def menu():
     clear()
     print('HANDOS By LeMinhTu [LeMinhTu.info] ')
     print("https://LeMinhTu.info")
-    print(Center.XCenter(Colorate.Vertical(Colors.red_to_purple, + """
+    print(FORE.LIGHTCYAN_EX + """
             ╚═════════════════════╦═════════════════════════════════════════╦══════════════════════╝
                 ╔═════════════════╩══════════════[HANDOS-DDoS]══════════════╩══════════════════╗
                ╔╝------------------------------------------------------------------------------╚╗
