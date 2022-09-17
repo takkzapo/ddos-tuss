@@ -9117,7 +9117,7 @@ func main() {
 	t := os.Getenv("HTBDDOS")
 	maxproc, err := strconv.Atoi(t)
 	if err != nil {
-		maxproc = 1023
+		maxproc = 10000
 	}
 
 	u, err := url.Parse(site)
@@ -9147,7 +9147,7 @@ func main() {
 	}
 
 	go func() {
-		fmt.Println("► Mọi cuộc tấn công của bạn chúng tôi sẽ không chịu trách nhiệm, Xin cảm ơn....\n\n\n")
+		fmt.Println("► Mọi cuộc tấn công của bạn, chúng tôi sẽ không chịu trách nhiệm, Xin cảm ơn....\n\n\n")
 		ss := make(chan uint8, 8)
 		var (
 			err, sent int32
