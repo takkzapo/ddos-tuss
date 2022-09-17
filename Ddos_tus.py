@@ -38,7 +38,7 @@ def menu():
     clear()
     print('HANDOS By LeMinhTu [LeMinhTu.info] ')
     print("https://LeMinhTu.info")
-    print(Fore.YELLOW + """
+    print(Fore.LIGHTCYAN_EX + """
             ╚═════════════════════╦═════════════════════════════════════════╦══════════════════════╝
                 ╔═════════════════╩══════════════[HANDOS-DDoS]══════════════╩══════════════════╗
                ╔╝------------------------------------------------------------------------------╚╗
@@ -63,7 +63,7 @@ def menu():
 def main():
     menu()
     while(True):
-        cnc = input('''Input : ''')
+        cnc = input('''Fore.LIGHTCYAN_EX+"╔═══"+ Fore.LIGHTCYAN_EX+"[""root"+ Fore.LIGHTCYAN_EX+"@"+ Fore.LIGHTCYAN_EX+"HANDOS"+ Fore.LIGHTCYAN_EX+"]"+ Fore.LIGHTCYAN_EX+"\n╚══\x1b[38;2;0;255;189m> "+Fore.YELLOW''')
         if cnc == "layer7" or cnc == "LAYER7" or cnc == "L7" or cnc == "l7":
             ()
         elif cnc == "layer4" or cnc == "LAYER4" or cnc == "L4" or cnc == "l4":
@@ -121,11 +121,11 @@ def main():
                 out = cnc.split()[6]
                 os.system(f'go run stress.go {ip} {port} {mode} {conn} {time} {out}')
             except IndexError:
-                print(Fore.RED +'Usage: stress <ip> <port> <mode> <connection> <seconds> <timeout>')
-                print(Fore.RED +'MODE: [1] TCP')
-                print(Fore.RED +'      [2] UDP')
-                print(Fore.RED +'      [3] HTTP')
-                print(Fore.RED +'Example: stress 9.9.9.9 80/443 3 1250 60 5')
+                print(Fore.YELLOW +'Usage: stress <ip> <port> <mode> <connection> <seconds> <timeout>')
+                print(Fore.YELLOW +'MODE: [1] TCP')
+                print(Fore.YELLOW +'      [2] UDP')
+                print(Fore.YELLOW +'      [3] HTTP')
+                print(Fore.YELLOW +'Example: stress 9.9.9.9 80/443 3 1250 60 5')
 
         elif "http-rand" in cnc:
             try:
