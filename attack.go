@@ -9147,7 +9147,7 @@ func main() {
 	}
 
 	go func() {
-		fmt.Println("Attacking....\n\n\n")
+		fmt.Println("► Mọi cuộc tấn công của bạn chúng tôi sẽ không chịu trách nhiệm, Xin cảm ơn....\n\n\n")
 		ss := make(chan uint8, 8)
 		var (
 			err, sent int32
@@ -9172,7 +9172,7 @@ func main() {
 			case targetComplete:
 				sent++
 				fmt.Printf("\r%-6d of max %-6d |\t%7d |\t%6d", cur, maxproc, sent, err)
-				fmt.Println("\r-- HTB Attack Finished --       \n\n\r")
+				fmt.Println("\r-- LMT Attack Finished --       \n\n\r")
 				os.Exit(0)
 			}
 		}
