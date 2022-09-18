@@ -9147,7 +9147,7 @@ func main() {
 	}
 
 	go func() {
-		fmt.Println("▶ Copyright @HANDOS - Start the attack.... /n/n/n")
+		fmt.Println("▶ Copyright @HANDOS - Start the attack.... \n\n\n\n")
 		ss := make(chan uint8, 8)
 		var (
 			err, sent int32
