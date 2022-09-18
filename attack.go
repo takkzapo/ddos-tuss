@@ -9114,10 +9114,10 @@ func main() {
 	flag.Var(&headers, "header", "Add headers to the request. Could be used multiple times")
 	flag.Parse()
 
-	t := os.Getenv("HTBDDOS")
+	t := os.Getenv("LMTDDOS")
 	maxproc, err := strconv.Atoi(t)
 	if err != nil {
-		maxproc = 11111
+		maxproc = 10000
 	}
 
 	u, err := url.Parse(site)
@@ -9127,7 +9127,7 @@ func main() {
 	}
 
 	if version {
-		fmt.Println("HTB", __version__)
+		fmt.Println("LMT", __version__)
 		os.Exit(0)
 	}
 
@@ -9147,7 +9147,14 @@ func main() {
 	}
 
 	go func() {
-		fmt.Println("► The attack will start in 3 seconds....\n\n\n")
+		fmt.Println("_______ __________________ _______  _______  _       _________ _        _______
+			    (  ___  )\__   __/\__   __/(  ___  )(  ____ \| \    /\\__   __/( (    /|(  ____ \
+	                    | (   ) |   ) (      ) (   | (   ) || (    \/|  \  / /   ) (   |  \  ( || (    \/
+                            | (___) |   | |      | |   | (___) || |      |  (_/ /    | |   |   \ | || |      
+                            |  ___  |   | |      | |   |  ___  || |      |   _ (     | |   | (\ \) || | ____ 
+                            | (   ) |   | |      | |   | (   ) || |      |  ( \ \    | |   | | \   || | \_  )
+                            | )   ( |   | |      | |   | )   ( || (____/\|  /  \ \___) (___| )  \  || (___) |
+                            |/     \|   )_(      )_(   |/     \|(_______/|_/    \/\_______/|/    )_)(_______)")
 		ss := make(chan uint8, 8)
 		var (
 			err, sent int32
