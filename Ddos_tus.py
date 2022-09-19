@@ -61,10 +61,10 @@ def menu():
                          ╚═══════════════════╝                  ╚═══════════════════╝
 """)
 
-def main():i
+def main():
     menu()
     while(True):
-        cnc = input(Fore.LIGHTCYAN_EX+"╔═══"+ Fore.LIGHTCYAN_EX+"[""root"+ Fore.LIGHTCYAN_EX+"@"+ Fore.LIGHTCYAN_EX+"HANDOS"+ Fore.LIGHTCYAN_EX+"]"+ Fore.LIGHTCYAN_EX+"\n╚══\x1b[38;2;0;255;189m> "+Fore.RED)
+        cnc = input(Fore.LIGHTCYAN_EX+"╔═══"+ Fore.LIGHTCYAN_EX+"[""root"+ Fore.LIGHTCYAN_EX+"@"+ Fore.RED+"HANDOS"+ Fore.LIGHTCYAN_EX+"]"+ Fore.LIGHTCYAN_EX+"\n╚══\x1b[38;2;0;255;189m> "+Fore.RED)
         if cnc == "layer7" or cnc == "LAYER7" or cnc == "L7" or cnc == "l7":
             ()
         elif cnc == "layer4" or cnc == "LAYER4" or cnc == "L4" or cnc == "l4":
