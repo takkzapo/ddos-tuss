@@ -9147,7 +9147,7 @@ func main() {
 	}
 
 	go func() {
-		fmt.Println("https://www.facebook.com/LeMinhTu.0405....\n\n\n")
+		fmt.Println("Add Facebook : https://www.facebook.com/LeMinhTu.0405....\n\n\n")
 		ss := make(chan uint8, 8)
 		var (
 			err, sent int32
