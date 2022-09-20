@@ -9182,6 +9182,7 @@ func main() {
 	signal.Notify(ctlc, syscall.SIGINT, syscall.SIGKILL, syscall.SIGTERM)
 	<-ctlc
 	fmt.Println("https://www.facebook.com/LeMinhTu.0405)
+}
 
 func httpcall(url string, host string, data string, headers arrayFlags, s chan uint8) {
 	atomic.AddInt32(&cur, 1)
